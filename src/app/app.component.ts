@@ -2,9 +2,17 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  template: `
+<button (mouseover) = "save($event)">guardar</button>
+  `,
+  styles: [`
+
+  `]
 })
 export class AppComponent {
-  mensaje = 'curso de angular';
+  
+  save($event){
+    console.log($event);
+  }
+
 }
