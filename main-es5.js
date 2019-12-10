@@ -20,17 +20,6 @@
             webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
             /***/ 
         }),
-        /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/app.component.html": 
-        /*!**************************************************************************!*\
-          !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/app.component.html ***!
-          \**************************************************************************/
-        /*! exports provided: default */
-        /***/ (function (module, __webpack_exports__, __webpack_require__) {
-            "use strict";
-            __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<h1>Codicosas</h1>\n\n<h2>{{mensaje}}</h2>\n<hr/>\n<cursos></cursos>\n\n");
-            /***/ 
-        }),
         /***/ "./node_modules/tslib/tslib.es6.js": 
         /*!*****************************************!*\
           !*** ./node_modules/tslib/tslib.es6.js ***!
@@ -331,17 +320,6 @@
             }
             /***/ 
         }),
-        /***/ "./src/app/app.component.css": 
-        /*!***********************************!*\
-          !*** ./src/app/app.component.css ***!
-          \***********************************/
-        /*! exports provided: default */
-        /***/ (function (module, __webpack_exports__, __webpack_require__) {
-            "use strict";
-            __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FwcC5jb21wb25lbnQuY3NzIn0= */");
-            /***/ 
-        }),
         /***/ "./src/app/app.component.ts": 
         /*!**********************************!*\
           !*** ./src/app/app.component.ts ***!
@@ -355,15 +333,17 @@
             /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
             var AppComponent = /** @class */ (function () {
                 function AppComponent() {
-                    this.mensaje = 'curso de angular';
                 }
+                AppComponent.prototype.save = function ($event) {
+                    console.log($event);
+                };
                 return AppComponent;
             }());
             AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
                 Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
                     selector: 'app-root',
-                    template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./app.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/app.component.html")).default,
-                    styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./app.component.css */ "./src/app/app.component.css")).default]
+                    template: "\n<button (mouseover) = \"save($event)\">guardar</button>\n  ",
+                    styles: ["\n\n  "]
                 })
             ], AppComponent);
             /***/ 
