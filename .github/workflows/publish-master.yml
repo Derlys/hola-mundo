@@ -2,8 +2,8 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-     branches:
-       - 'master'
+    branches:
+      - 'master'
 
 jobs:
   deploy-gh-pages:
@@ -26,10 +26,11 @@ jobs:
           node-version: 12
           registry-url: https://registry.npmjs.org/
       - run: yarn
-      - run: yarn build --base-href=/kikstart-ui-starter/
+      - run: yarn build --base-href=/hola-mundo/
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v2.5.0
         env:
           ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           PUBLISH_BRANCH: gh-pages
-          PUBLISH_DIR: ./dist/kikstart-ui-starter
+          PUBLISH_DIR: ./dist/hola-mundo
+          
