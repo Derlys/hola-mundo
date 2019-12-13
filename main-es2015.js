@@ -267,17 +267,17 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let AppComponent = class AppComponent {
-    save($event) {
-        console.log($event);
+    onKeyUp(usuario) {
+        console.log(usuario);
     }
 };
 AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-root',
-        template: `
-<button (mouseover) = "save($event)">guardar</button>
+        template: `<br/>
+    <input type ="text" (keyup.enter)="onKeyUp(nombre.value)" #nombre />
   `,
-        styles: ["\n\n  "]
+        styles: [""]
     })
 ], AppComponent);
 

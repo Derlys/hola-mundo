@@ -334,16 +334,16 @@
             var AppComponent = /** @class */ (function () {
                 function AppComponent() {
                 }
-                AppComponent.prototype.save = function ($event) {
-                    console.log($event);
+                AppComponent.prototype.onKeyUp = function (usuario) {
+                    console.log(usuario);
                 };
                 return AppComponent;
             }());
             AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
                 Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
                     selector: 'app-root',
-                    template: "\n<button (mouseover) = \"save($event)\">guardar</button>\n  ",
-                    styles: ["\n\n  "]
+                    template: "<br/>\n    <input type =\"text\" (keyup.enter)=\"onKeyUp(nombre.value)\" #nombre />\n  ",
+                    styles: [""]
                 })
             ], AppComponent);
             /***/ 
