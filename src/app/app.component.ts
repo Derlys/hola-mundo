@@ -2,17 +2,14 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  template: `
-<button (mouseover) = "save($event)">guardar</button>
+  template: `<br/>
+    <input type ="text" (keyup.enter)="onKeyUp(nombre.value)" #nombre />
   `,
-  styles: [`
-
-  `]
+  styles: [``]
 })
 export class AppComponent {
   
-  save($event){
-    console.log($event);
-  }
-
+  onKeyUp(usuario){
+    console.log(usuario);
+    }
 }
