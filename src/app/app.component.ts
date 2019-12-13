@@ -1,15 +1,18 @@
 import { Component } from '@angular/core';
+import { UsuarioService } from './usuarios.service';
 
 @Component({
   selector: 'app-root',
-  template: `<br/>
-    <input type ="text" (keyup.enter)="onKeyUp(nombre.value)" #nombre />
-  `,
-  styles: [``]
+  templateUrl: './app.component.html',
+  styleUrls:['./app.component.css']
 })
 export class AppComponent {
+  personas : any = [];
   
-  onKeyUp(usuario){
-    console.log(usuario);
-    }
+ constructor () {
+
+  let usuario = new UsuarioService ();
+   this.personas = usuario.getUsuarios();
+ }
+
 }
