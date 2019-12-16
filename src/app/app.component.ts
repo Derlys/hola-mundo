@@ -1,18 +1,21 @@
 import { Component } from '@angular/core';
 import { UsuarioService } from './usuarios.service';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls:['./app.component.css']
+  styleUrls:['./app.component.css'],
+ 
 })
 export class AppComponent {
-  personas : any = [];
   
- constructor () {
+ constructor (){
 
-  let usuario = new UsuarioService ();
-   this.personas = usuario.getUsuarios();
- }
+ } 
+ miFormulario = new FormGroup({
+   username : new FormControl('', Validators.required),
+   userpassword : new FormControl ('', Validators.required)
+ });
 
 }

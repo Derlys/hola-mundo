@@ -1,8 +1,16 @@
-<ul>
-    <li *ngFor = "let persona of personas">
-        {{persona.edad}}
-    </li>
-</ul>
+<div class = "container">
+    <form [formGroup]="miFormulario">
+        Usuario: <input 
+        [class.is-invalid] = "miFormulario.get('username').touched && miFormulario.get('username').invalid"
+        type = "text" 
+        class = "form-control" 
+        formControlName="username">
+        Password: <input 
+        type="pasword" 
+        class="form-control" 
+        formControlName="userpassword"><br/>
+        <button class="btn btn-primary" type="submit">Enviar</button>
+    </form>
 
-
+</div>
 
