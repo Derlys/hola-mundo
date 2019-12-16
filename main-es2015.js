@@ -32,7 +32,7 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ul>\n    <li *ngFor = \"let persona of personas\">\n        {{persona.edad}}\n    </li>\n</ul>\n\n\n\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class = \"container\">\n    <form [formGroup]=\"miFormulario\">\n        Usuario: <input \n        [class.is-invalid] = \"miFormulario.get('username').touched && miFormulario.get('username').invalid\"\n        type = \"text\" \n        class = \"form-control\" \n        formControlName=\"username\">\n        Password: <input \n        type=\"pasword\" \n        class=\"form-control\" \n        formControlName=\"userpassword\"><br/>\n        <button class=\"btn btn-primary\" type=\"submit\">Enviar</button>\n    </form>\n\n</div>\n\n");
 
 /***/ }),
 
@@ -290,15 +290,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppComponent", function() { return AppComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _usuarios_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./usuarios.service */ "./src/app/usuarios.service.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
 
 
 
 let AppComponent = class AppComponent {
     constructor() {
-        this.personas = [];
-        let usuario = new _usuarios_service__WEBPACK_IMPORTED_MODULE_2__["UsuarioService"]();
-        this.personas = usuario.getUsuarios();
+        this.miFormulario = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormGroup"]({
+            username: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
+            userpassword: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required)
+        });
     }
 };
 AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -345,7 +346,8 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         ],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
-            _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"]
+            _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ReactiveFormsModule"]
         ],
         providers: [],
         bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]]
@@ -383,43 +385,6 @@ CursosComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     })
 ], CursosComponent);
 
-
-
-/***/ }),
-
-/***/ "./src/app/usuarios.service.ts":
-/*!*************************************!*\
-  !*** ./src/app/usuarios.service.ts ***!
-  \*************************************/
-/*! exports provided: UsuarioService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UsuarioService", function() { return UsuarioService; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-
-class UsuarioService {
-    getUsuarios() {
-        return [
-            {
-                "nombre": "Luis",
-                "edad": 20,
-                "hobby": 'cantar'
-            },
-            {
-                "nombre": "Derlys",
-                "edad": 30,
-                "hobby": 'pintar'
-            },
-            {
-                "nombre": "Bram",
-                "edad": 40,
-                "hobby": 'escribir'
-            }
-        ];
-    }
-}
 
 
 /***/ }),
